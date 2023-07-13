@@ -7,10 +7,12 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { BoardsModule } from './boards/boards.module';
 import ormconfig from "./config/ormconfig";
 import { BoardRepository } from "./boards/board.repository";
+import { AuthModule } from './auth/auth.module';
+import { UserRepository } from "./auth/user.repository";
 
 @Module({
-  imports: [TypeOrmModule.forRoot(ormconfig), BoardsModule],
+  imports: [TypeOrmModule.forRoot(ormconfig), BoardsModule, AuthModule],
   controllers: [AppController, BoardsController],
-  providers: [AppService, BoardsService, BoardRepository],
+  providers: [AppService, BoardsService, BoardRepository, UserRepository],
 })
 export class AppModule {}
