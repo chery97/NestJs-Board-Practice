@@ -7,7 +7,7 @@ export class AppController {
 
   @Get()
   getHello(): string {
-    // 지라 테스트6
+    // 지라 테스트7
     return this.appService.getHello();
   }
 }
